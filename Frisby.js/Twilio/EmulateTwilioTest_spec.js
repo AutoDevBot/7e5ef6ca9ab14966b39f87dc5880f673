@@ -1,4 +1,4 @@
-var frisby = require('frisby.js');
+var frisby = require(process.env.FRISBY_PATH);
 
 var URL = 'http://localhost:8080';
 // Endpoint that Twilio is pointed to as the message callback

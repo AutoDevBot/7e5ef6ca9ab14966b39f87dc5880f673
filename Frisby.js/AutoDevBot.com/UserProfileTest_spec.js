@@ -2,7 +2,7 @@
 Tests the user's profiles API endpoints
 
  */
-var frisby = require('/frisby.js');
+var frisby = require(process.env.FRISBY_PATH);
 
 var URL = 'https://api.AutoDevBot.com';
 var AUTH_TOKEN = '<AUTHENTICATION_TOKEN>';
