@@ -4,7 +4,7 @@
  */
 var frisby = require(process.env.FRISBY_PATH);
 
-var URL = 'https://test.AutoDevBot.com';
+var URL = 'http://test.AutoDevBot.com';
 
 /**
  * GET /sample endpoint example
