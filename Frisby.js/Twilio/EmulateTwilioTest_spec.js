@@ -11,6 +11,7 @@ var To = '+19498912906';
 /**
  * Standard incoming SMS message from Twilio
  */
+/*
 frisby.create('Standard Incoming SMS Message from Twilio')
     .post(URL + twilioCallBackEndpoint,{
         MessageSid : MessageSid,
@@ -23,11 +24,13 @@ frisby.create('Standard Incoming SMS Message from Twilio')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'text/xml')
     .toss();
+*/
 
 /**
  * An SMS message longer than 160 characters.  Twilio will chuck
  * it up and make the callback in pieces.
  */
+/*
 frisby.create('Chucked Incoming SMS Message from Twilio')
     .post(URL + '/TwilioCustomerSMS12345678',{
         MessageSid : MessageSid,
@@ -40,3 +43,4 @@ frisby.create('Chucked Incoming SMS Message from Twilio')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'text/xml')
     .toss();
+*/
