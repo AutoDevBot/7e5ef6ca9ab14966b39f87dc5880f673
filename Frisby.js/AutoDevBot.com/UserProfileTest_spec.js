@@ -1,51 +1,38 @@
-/*
-Tests the user's profiles API endpoints
-
+/**
+ * Monitoring the test server provided by AutoDevBot.com
+ *
  */
 var frisby = require(process.env.FRISBY_PATH);
 
-var URL = 'https://api.AutoDevBot.com';
-var AUTH_TOKEN = '<AUTHENTICATION_TOKEN>';
+//var URL = 'https://test.AutoDevBot.com';
+var URL = 'http://localhost:8081';
 
-// Global setup for all tests
-frisby.globalSetup({
-    request: {
-        headers:{'authToken': AUTH_TOKEN}
-    }
-});
-
-/*
-Get the current user's information
+/**
+ * GET /sample endpoint example
  */
-frisby.create('User GET')
-    .get(URL + '/user')
+frisby.create('Sample GET')
+    .get(URL + '/sample')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'application/json')
-    .expectJSON(
+    .expectJSONTypes(
         {
-            "f_name":String,
-            "l_name":String,
-            "email":String
+            "user_name":String,
+            "has_credit_card":Boolean,
+            "age":Number
         }
     )
     .toss();
 
-/*
-Update the current user's information
+/**
+ * POST to /sample endpoint example
  */
-frisby.create('User POST')
-    .timeout(120000)
-    .post(URL + '/user',{
-            f_name:'AutoDev',
-            l_name:'Bot',
-            email:'info@autodevbot.com'
+frisby.create('Sample POST')
+    .post(URL + '/sample',{
+        user_name:'Mary',
+        age: 23
         }
     )
-    .expectStatus(201)
+    .expectStatus(200)
     .expectHeaderContains('content-type', 'application/json')
-    .expectJSON(
-        {
-            "result":"success"
-        }
-    )
+    .expectBodyContains('success')
     .toss();
