@@ -1,0 +1,10 @@
+{
+    "name": "AutoDevbot.com-monitoring-examples",
+    "private": false,
+    "version": "0.0.1",
+    "description": "AutoDevBots Examples",
+    "author": "Garland Kan <garland@AutoDevBot.com>",
+    "dependencies": {
+        "frisby": "0.7.8"
+    }
+}

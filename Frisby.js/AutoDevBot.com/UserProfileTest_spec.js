@@ -2,7 +2,7 @@
  * Monitoring the test server provided by AutoDevBot.com
  *
  */
-var frisby = require(process.env.FRISBY_PATH);
+var frisby = require('frisby');
 
 var URL = 'http://test.AutoDevBot.com';
 
